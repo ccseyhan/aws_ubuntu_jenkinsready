@@ -20,7 +20,7 @@ data "template_file" "userdata" {
   instance_type = "t3.large"
   vpc_security_group_ids = [aws_security_group.HTTPandSSH.id]
   user_data = data.template_file.userdata.rendered
-  key_name = "test1key"
+  key_name = var.key_name
  }
 
  resource "aws_security_group" "HTTPandSSH" {
